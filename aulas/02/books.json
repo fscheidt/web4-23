@@ -1,0 +1,32 @@
+[{
+  "id": 1,
+  "year": 2023,
+  "title": "Mastering JavaScript Functional Programming - Write Clean, Robust, and Maintainable Web and Server Code Using Functional JavaScript and TypeScript",
+  "isbn": "9781804610138",
+  "gid": "fkHVzwEACAAJ",
+  "authors": "Federico Kereki"
+},
+{
+  "id": 2,
+  "year": 2021,
+  "title": "Fluent Python - Clear, Concise, and Effective Programming",
+  "isbn": "9781492056355",
+  "gid": "H1SXzQEACAAJ",
+  "authors": "Luciano Ramalho"
+},
+{
+  "id": 3,
+  "year": 2021,
+  "title": "Getting Started with Google BERT - Build and Train State-of-the-art Natural Language Processing Models Using BERT",
+  "isbn": "9781838821593",
+  "gid": "50zyzQEACAAJ",
+  "authors": "Sudharsan Ravichandiran"
+},
+{
+  "id": 4,
+  "year": 2023,
+  "title": "Deep Learning in Time Series Analysis",
+  "isbn": "9780367321789",
+  "gid": "qOCczwEACAAJ",
+  "authors": "Arash Gharehbaghi"
+}]
