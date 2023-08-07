@@ -2,10 +2,24 @@
 
 - [Moodle](https://ava.ifpr.edu.br/course/view.php?id=10808)
 
-
 ## Aula 02
 
-Exemplo de API com FastAPI
+Tópicos:
+
+- Setup do ambiente de desenvolvimento python
+	- criação do virtual env
+	- instalação das dependências: fastapi e uvicorn
+- Implementação: exemplo básico de API
+- FastApi framework (conceitos):
+	- Verbos: GET, POST, DELETE, PUT
+	- Endpoint (recurso)
+	- Síncrono vs Assíncrono
+	- Serialização
+    - Parâmetros url
+- Teste e documentação
+	- curl/http GET request
+	- docs (post)
+
 
 ### ambiente python
 
@@ -44,8 +58,23 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 ```
 
-## start fastapi
+### iniciar fastapi
 
 ```bash
 uvicorn main:app --reload
 ```
+
+---
+
+<details>
+<summary><b>Utilitários</b></summary>
+
+**httpie**
+
+```bash
+sudo apt-get install httpie
+# ou
+sudo snap install httpie
+```
+
+</details>
