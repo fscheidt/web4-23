@@ -19,7 +19,7 @@ def get_book(id: int):
 
 # 3. Busca por título
 
-# 4. Busca por authors
+# 4. Busca por authors (usar o arquivo data/booksV2.json )
 
 # iniciar o servidor web pelo terminal:
 # uvicorn books:app --reload
