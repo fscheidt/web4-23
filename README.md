@@ -2,6 +2,10 @@
 
 - [Moodle](https://ava.ifpr.edu.br/course/view.php?id=10808)
 
+## Aula 04
+
+- Integração python com API TMDB - [tmdb.py](tmdb.py)
+
 ## Aula 02
 
 Tópicos:
