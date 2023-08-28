@@ -1,48 +1,58 @@
 import requests
-# pip install fastapi uvicorn requests
-api_key = "SUA_CHAVE_AQUI"
+api_key = "d1da20fbfa65312b857fb7b517bf855c"
 
-endpoint = "https://api.themoviedb.org/3/discover/movie"
-# params = "?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
-params = "?sort_by=vote_count.desc"
-url = f"{endpoint}{params}&api_key={api_key}"
-headers = {"accept": "application/json"}
+genres = [
+    {'id': 28, 'name': 'Action'}, 
+    {'id': 12, 'name': 'Adventure'}, 
+    {'id': 16, 'name': 'Animation'}, 
+    {'id': 35, 'name': 'Comedy'}, {'id': 80, 'name': 'Crime'}, {'id': 99, 'name': 'Documentary'}, {'id': 18, 'name': 'Drama'}, {'id': 10751, 'name': 'Family'}, {'id': 14, 'name': 'Fantasy'}, {'id': 36, 'name': 'History'}, {'id': 27, 'name': 'Horror'}, {'id': 10402, 'name': 'Music'}, {'id': 9648, 'name': 'Mystery'}, {'id': 10749, 'name': 'Romance'}, {'id': 878, 'name': 'Science Fiction'}, {'id': 10770, 'name': 'TV Movie'}, {'id': 53, 'name': 'Thriller'}, {'id': 10752, 'name': 'War'}, {'id': 37, 'name': 'Western'}]
 
-# Faz a requisição GET para a url
-# salva na variavel response o resultado da busca no tmdb
-response = requests.get(url, headers=headers)
-# converter a resposta da API para um objeto python (dictionary)
-data = response.json()
+def get_genero_id(id):
+    """ retorna o nome do genero de acordo com o id """
+    pass
 
-# imprime a pagina do resultado
-page = data['page']
-print(f"page: {page}")
+# teste:
+# get_genero_id(28) # Action
 
-# obtem o primeiro filme do resultado
-# filme1 = data['results'][0]
-# print(filme1)
+# ====================================
+def get_json(endpoint, params=None):
+    """ 
+    fornecido o endpoint faz o request e retorna o resultado em json
+    """
+    url = f"{endpoint}{params}&api_key={api_key}"
+    response = requests.get(url)
+    return response.json()
 
-# Obtem apenas o tituto do primeiro filme
-# print(filme1['original_title'])
+# ====================================
+def filmes_populares():
+    """ Obtem os filmes mais populares usando endpoint discover """
 
-# IMPRIMIR o titulo de todos os filmes em "data"
+    data = get_json(
+        "https://api.themoviedb.org/3/discover/movie",
+        "?sort_by=vote_count.desc"
+    )
+    results = data['results']
+    print("="*20)
+    for movie in results:
+        print(movie['original_title']) 
+        print(movie['id']) 
+        print(movie['genre_ids'])
+        print(movie['vote_count']) 
+        print("----")
+    print(f"Total: {len(results)}")
 
-results = data['results']
-print("="*20)
-for movie in results:
-    print(movie['original_title']) 
-    print(movie['id']) 
-    print(movie['genre_ids'])
-    print(movie['vote_count']) 
-    print("----")
+def get_generos():
+    """ Obter a lista de generos """
+    data = get_json(
+        "https://api.themoviedb.org/3/genre/movie/list",
+        "?language=en"
+    )
+    results = data['genres']
+    print(results)
 
-print(f"Total: {len(results)}")
 
-# Obter o nome dos generos
-# 
-end = f"https://api.themoviedb.org/3/genre/movie/list"
-params = "?language=en"
-url = f"{end}{params}&api_key={api_key}"
 
-# imprimir os filmes (titulo) e o nome dos generos
+if __name__ == "__main__":
+    # filmes_populares()
+    get_generos()
 
