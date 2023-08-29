@@ -26,7 +26,7 @@ def get_json(endpoint, params=None):
     """ 
     fornecido o endpoint faz o request e retorna o resultado em json
     """
-    url = f"{endpoint}{params}&api_key={api_key}"
+    url = f"https://api.themoviedb.org/3{endpoint}{params}&api_key={api_key}"
     response = requests.get(url)
     return response.json()
 
@@ -35,8 +35,7 @@ def get_json(endpoint, params=None):
 def filmes_populares(limit=3):
     """ Obtem os filmes mais populares usando endpoint discover """
     data = get_json(
-        "https://api.themoviedb.org/3/discover/movie",
-        "?sort_by=vote_count.desc"
+        "/discover/movie", "?sort_by=vote_count.desc"
     )
     results = data['results']
     print("="*20)
@@ -46,22 +45,28 @@ def filmes_populares(limit=3):
         print(movie['original_title']) 
         print(movie['id']) 
         print(movie['genre_ids'])
-        # generos = [g['name'] for g in get_genero_id(movie['genre_ids'])]
-        print(get_genero_id(movie['genre_ids']))
+        generos = [g['name'] for g in get_genero_id(movie['genre_ids'])]
+        print(generos)
+        # print(get_genero_id(movie['genre_ids']))
         print(movie['vote_count']) 
         print("----")
         c+=1
-        if c > limit: return
+        if c > limit: break
     print(f"Total: {len(results)}")
     return results
 
 # ====================================
+# endpoint /person
+def get_artista():
+    """ fornecido o nome do artista retorna sua bio """
+    pass
 
-def get_tmdb_genres():
+# ====================================
+
+def get_tmdb_genres(lang="us"):
     """ Obter a lista de generos """
     data = get_json(
-        "https://api.themoviedb.org/3/genre/movie/list",
-        "?language=en"
+        "/genre/movie/list", f"?language={lang}"
     )
     results = data['genres']
     return results
@@ -73,5 +78,5 @@ if __name__ == "__main__":
     filmes_populares()
     # teste:
     # print(get_tmdb_genres())
-    print(get_genero_id(28)) # Action
-    print(get_genero_id([28,12])) # Action
+    # print(get_genero_id(28)) # Action
+    # print(get_genero_id([28,12])) # Action
