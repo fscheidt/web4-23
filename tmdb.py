@@ -76,7 +76,9 @@ def get_tmdb_genres(lang="us"):
 if __name__ == "__main__":
     # print(get_genero_id(12))
     filmes_populares()
+    # filmes_populares(200)
     # teste:
     # print(get_tmdb_genres())
+    # print(get_tmdb_genres("pt-br"))
     # print(get_genero_id(28)) # Action
     # print(get_genero_id([28,12])) # Action
