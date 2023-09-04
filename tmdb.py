@@ -56,9 +56,15 @@ def filmes_populares(limit=3):
     return results
 
 # ====================================
-# endpoint /person
-def get_artista():
+
+# https://api.themoviedb.org/3/person/id
+def get_artista_id(id):
     """ fornecido o nome do artista retorna sua bio """
+    pass
+
+# https://api.themoviedb.org/3/search/person
+def get_artista_name(name):
+    """ procura artista pelo nome """
     pass
 
 # ====================================
