@@ -2,6 +2,27 @@
 
 - [Moodle](https://ava.ifpr.edu.br/course/view.php?id=10808)
 
+## Aula 07
+Adicionar ao `pycine.py`
+
+```python
+from fastapi.middleware.cors import (
+     CORSMiddleware
+)
+# habilita CORS (permite que o Svelte acesse o fastapi)
+origins = [
+    "http://localhost",
+    "http://localhost:5173",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+```
+
 ## Aula 04
 
 - Integração python com API TMDB - [tmdb.py](tmdb.py)
