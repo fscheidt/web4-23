@@ -97,3 +97,11 @@ async def get_artista(name: str):
     # return data
     return filtro
 
+# 1. ativar o env
+# source env/bin/activate
+
+# 2. iniciar o uvicorn
+# uvicorn pycine:app --reload
+
+# 3. abre no navegador
+# localhost:8000/filmes
