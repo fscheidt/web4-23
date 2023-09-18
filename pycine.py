@@ -9,6 +9,7 @@ from fastapi.middleware.cors import (
 origins = [
     "http://localhost",
     "http://localhost:5173",
+    "http://localhost:5174",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -53,27 +54,8 @@ async def filmes_populares(limit=3):
     )
     results = data['results']
     filtro = []
-    """
-    print("="*20)
-    c=1
-    """
     for movie in results:
-        # print(c)
-        filtro.append({"title": movie['original_title']})
-        """
-        print(movie['original_title']) 
-        print(movie['id']) 
-        print(movie['genre_ids'])
-        generos = [g['name'] for g in get_genero_id(movie['genre_ids'])]
-        print(generos)
-        # print(get_genero_id(movie['genre_ids']))
-        print(movie['vote_count']) 
-        print("----")
-        c+=1
-        if c > limit: break
-        """
-    # print(f"Total: {len(results)}")
-    
+        filtro.append({"title": movie['original_title']})    
     return filtro
 
 @app.get("/artista/{name}")
