@@ -55,7 +55,11 @@ async def filmes_populares(limit=3):
     results = data['results']
     filtro = []
     for movie in results:
-        filtro.append({"title": movie['original_title']})    
+        filtro.append({
+            "title": movie['original_title'], 
+            "image": 
+               f"https://image.tmdb.org/t/p/w185{movie['poster_path']}"
+        })    
     return filtro
 
 @app.get("/artista/{name}")
