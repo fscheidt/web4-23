@@ -2,6 +2,9 @@
 
 - [Moodle](https://ava.ifpr.edu.br/course/view.php?id=10808)
 
+## Front (svelte)
+- https://github.com/fscheidt/front
+
 ## Aula 07
 Adicionar ao `pycine.py`
 
