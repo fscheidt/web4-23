@@ -59,8 +59,12 @@ async def filmes_populares(limit=3):
             "title": movie['original_title'], 
             "image": 
                f"https://image.tmdb.org/t/p/w185{movie['poster_path']}"
-        })    
+        })
     return filtro
+
+# Precisa implementar o endpoint artista/1100
+# app.get("")
+# https://api.themoviedb.org/3/person/1100/
 
 @app.get("/artista/{name}")
 async def get_artista(name: str):
