@@ -1,9 +1,9 @@
 # Desenvolvimento Web IV - 2023
 
-- [Moodle](https://ava.ifpr.edu.br/course/view.php?id=10808)
-
-## Front (svelte)
-- https://github.com/fscheidt/front
+- [front (svelte)](https://github.com/fscheidt/front)
+- [pycine (fastapi)](https://github.com/fscheidt/pycine)
+- [web4 - 2023](https://github.com/fscheidt/web4-23)
+- [ava](https://ava.ifpr.edu.br/course/view.php?id=10808)
 
 ## Aula 07
 Adicionar ao `pycine.py`
