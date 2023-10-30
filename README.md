@@ -5,6 +5,48 @@
 - [web4 - 2023](https://github.com/fscheidt/web4-23)
 - [ava](https://ava.ifpr.edu.br/course/view.php?id=10808)
 
+
+# Favoritar filme (github)
+
+## Projeto pycine:
+
+Criar arquivo `.gitignore`
+```
+env
+__pycache__
+*.py[cod]
+```
+
+Gerar o arquivo `requirements.txt` usando o comando:
+```bash
+# ativar o env
+source env/bin/activate
+pip freeze > requirements.txt
+```
+
+Criar o repositório git:
+```bash
+cd pycine
+git init
+git add -A
+git commit -m "initial"
+# vincular ao repositorio criado no github
+# git remote add origin https://github.com/usuario/pycine.git
+# git push -u origin master
+
+```
+
+Testar comando clone:
+```bash
+mkdir teste
+cd teste
+git clone https://github.com/usuario/pycine.git
+```
+
+
+---
+
+
 ## Aula 07
 Adicionar ao `pycine.py`
 
